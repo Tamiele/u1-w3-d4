@@ -3,7 +3,7 @@ const creatButton = document.getElementById("button");
 
 // Crea con il for 76 celle numerate
 
-for (let i = 1; i <= 76; i++) {
+for (let i = 1; i <= 90; i++) {
   const tombolini = document.createElement("div");
   tombolini.className = "tombolini"; //creo una classe per i tombolini che poi vado a modificare nel css
   tombolini.textContent = i; //assegno la i in modo da dare del testo (in qeuesto caso numeri) dei tombolini
@@ -12,7 +12,7 @@ for (let i = 1; i <= 76; i++) {
 
 //creo un evento al click del bottone che mi genera numeri random
 creatButton.addEventListener("click", () => {
-  const randomNumber = Math.floor(Math.random() * 76) + 1;
+  const randomNumber = Math.floor(Math.random() * 90) + 1;
 
   const newTombolini = document.querySelectorAll(".tombolini"); //creo una nuova variabile con il valore di tombolini e vado a prendere tutti i tombolini. ciclo in modo da attraversare newtombolini
   newTombolini.forEach((tombolini) => {
@@ -27,6 +27,7 @@ creatButton.addEventListener("click", () => {
 const tabellina = document.getElementById("tabellina");
 for (let i = 1; i <= 24; i++) {
   const cartella = document.createElement("div");
+
   cartella.className = "cartella";
   cartella.textContent = i;
   tabellina.appendChild(cartella);

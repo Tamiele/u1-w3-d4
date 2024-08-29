@@ -4,8 +4,14 @@ body {
   display: inline-block;
   height: 100vh;
   margin: 0;
-  background-color: #f4f4f4;
+  background-color: #1e7e93;
   text-align: center;
+}
+h1 {
+  color: red;
+  font-weight: bold;
+  font-size: 5rem;
+  margin-top: 1rem;
 }
 
 #tabellone {
@@ -42,11 +48,10 @@ body {
 
 #tabellina {
   margin-top: 5rem;
-  margin-inline: 13rem;
+  margin-inline: 14rem;
   text-align: center;
 }
 .cartella {
-  margin: 1px;
   padding: 9px;
   text-align: center;
   width: 50px;
