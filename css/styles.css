@@ -1,10 +1,10 @@
 body {
-  font-family: Arial, sans-serif;
+  font-family: Helvetica, sans-serif;
   box-sizing: border-box;
   display: inline-block;
   height: 100vh;
   margin: 0;
-  background-color: #1e7e93;
+  background-color: antiquewhite;
   text-align: center;
 }
 h1 {
@@ -24,13 +24,13 @@ h1 {
   margin: 1px;
   padding: 9px;
   text-align: center;
-  width: 50px;
-  height: 50px;
+  width: 35px;
+  height: 40px;
   display: inline-block;
   background-color: beige;
   color: red;
   font-weight: 900;
-  font-size: 30px;
+  font-size: 25px;
   border-radius: 50px;
   border: solid 8px red;
   cursor: pointer;
@@ -39,11 +39,16 @@ h1 {
   margin-block: 1rem;
   padding: 14px 24px;
   font-size: 18px;
-  background-color: red;
+  background-color: rgb(103, 29, 29);
   color: white;
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+#button:hover {
+  background-color: rgb(224, 15, 15); /* Colore di sfondo al passaggio del mouse */
+  transform: scale(1.35); /* Effetto di ingrandimento al passaggio del mouse */
 }
 
 #tabellina {
