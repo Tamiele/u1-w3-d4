@@ -1,45 +1,65 @@
-// Crea con il for 76 celle numerate
+// Crea con il for 90 celle numerate
 const tabellone = document.getElementById("tabellone");
-num = [];
+let arrayTombolini = [];
+let num = [];
 function genTombolini() {
-  for (let i = 1; i <= 90; i++) {
-    const tombolini = document.createElement("div");
+  for (let i = 0; i < 90; i++) {
+    let variabile = i + 1;
+    let tombolini = document.createElement("div");
     tombolini.className = "tombolini"; //creo una classe per i tombolini che poi vado a modificare nel css
-    tombolini.textContent = i; //assegno la i in modo da dare del testo (in qeuesto caso numeri) dei tombolini
+    tombolini.innerText = variabile; //assegno la i in modo da dare del testo (in qeuesto caso numeri) dei tombolini
     tabellone.appendChild(tombolini);
-    num.push(i);
+    arrayTombolini.push(tombolini);
+    num.push(variabile);
   }
 }
+console.log(arrayTombolini);
 
+console.log(num);
+
+let arrayTabellina = [];
+let cartella = [];
+console.log(cartella);
 //creo un evento al click del bottone che mi genera numeri random
 const creatButton = document.getElementById("button");
 function eventButton() {
   creatButton.addEventListener("click", () => {
-    const randomNumber = Math.floor(Math.random() * 90) + 1;
+    if (num.length > 0) {
+      let randomNumber = Math.floor(Math.random() * num.length);
+      let numeroCasuale = num[randomNumber];
 
-    const newTombolini = document.querySelectorAll(".tombolini"); //creo una nuova variabile con il valore di tombolini.
-    newTombolini[randomNumber]; //aggancio la nuova variabile alla nodelist di randomNumber in modo da far illuminare le caselle
-    const changeColorTombolini = newTombolini[randomNumber - 1]; // il -1 e per far uscire l'index uguale ai numeri generati.
-    changeColorTombolini.style.backgroundColor = "gold";
+      arrayTombolini[numeroCasuale - 1].style.backgroundColor = "gold";
+      num.splice(randomNumber, 1);
+      console.log(numeroCasuale);
+
+      for (let i = 0; i < cartella.length; i++) {
+        if (parseInt(cartella[i].innerText) === numeroCasuale) {
+          cartella[i].style.backgroundColor = "gold";
+        }
+      }
+    }
   });
 }
 
 ///////EXTRA///creazione tabellina
+
 const tabellina = document.getElementById("tabellina");
+
 function miniCartella() {
-  for (let i = 1; i <= 24; i++) {
-    const cartellaRandom = Math.floor(Math.random() * 90) + 1;
-    const cartella = document.createElement("div");
-    cartella.className = "cartella";
+  for (let i = 0; i <= 24; i++) {
+    let cartellaRandom = Math.floor(Math.random() * 90) + 1;
 
-    cartella.textContent = cartellaRandom;
-
-    console.log(cartellaRandom);
-
-    tabellina.appendChild(cartella);
-    if (cartellaRandom) {
-      cartellaRandom !== cartellaRandom;
+    while (arrayTabellina.includes(cartellaRandom)) {
+      cartellaRandom = Math.floor(Math.random() * 90) + 1;
     }
+
+    let arrayMinicartella = document.createElement("div");
+    arrayMinicartella.className = "cartella";
+
+    arrayMinicartella.innerText = cartellaRandom;
+    tabellina.appendChild(arrayMinicartella);
+    cartella.push(arrayMinicartella);
+    arrayTabellina.push(cartellaRandom);
   }
 }
 
